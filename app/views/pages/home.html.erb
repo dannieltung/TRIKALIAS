@@ -1,2 +1,16 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%= simple_form_for [Manufacturer.new] do |f| %>
+  <%= f.input :name, label: 'Nome' %>
+  <%= f.input :LG, label: 'Nota Fiscal' %>
+  <%= f.input :ICMS, label: 'ICMS' %>
+  <%= f.input :discount_1, label: 'Desconto 1' %>
+  <%= f.input :discount_2, label: 'Desconto 2' %>
+  <%= f.input :discount_3, label: 'Desconto 3' %>
+  <%= f.input :discount_4, label: 'Desconto 4' %>
+  <%= f.submit "Salvar", class: 'btn btn-success btn-block' %>
+<% end %>
+<% @manufacturers.each do |manufacturer| %>
+  <p><%= manufacturer.name %></p>
+  <p><%= number_to_percentage(manufacturer.LG, precision: 2, separator: ',') %></p>
+  <p><%= number_to_percentage(manufacturer.ICMS, precision: 2, separator: ',') %></p>
+  <p><%= number_to_percentage(manufacturer.discount_1, precision: 2, separator: ',') %></p>
+<% end %>

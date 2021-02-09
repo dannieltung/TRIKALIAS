@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_08_185252) do
+ActiveRecord::Schema.define(version: 2021_02_09_233959) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,15 @@ ActiveRecord::Schema.define(version: 2021_02_08_185252) do
     t.float "discount_2"
     t.float "discount_3"
     t.float "discount_4"
+    t.bigint "price_list_id"
+    t.index ["price_list_id"], name: "index_manufacturers_on_price_list_id"
+  end
+
+  create_table "price_lists", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "SKU"
+    t.float "gross_price"
   end
 
   create_table "users", force: :cascade do |t|
@@ -39,4 +48,5 @@ ActiveRecord::Schema.define(version: 2021_02_08_185252) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "manufacturers", "price_lists"
 end

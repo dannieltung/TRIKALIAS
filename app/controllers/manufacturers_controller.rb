@@ -1,4 +1,8 @@
 class ManufacturersController < ApplicationController
+  def new
+    @manufacturer = Manufacturer.new
+  end
+
   def create
     @manufacturer = Manufacturer.new(manufacturer_params)
     if @manufacturer.save

@@ -1,13 +1,4 @@
-<%= simple_form_for [Manufacturer.new] do |f| %>
-  <%= f.input :name, label: 'Nome' %>
-  <%= f.input :LG, label: 'Nota Fiscal' %>
-  <%= f.input :ICMS, label: 'ICMS' %>
-  <%= f.input :discount_1, label: 'Desconto 1' %>
-  <%= f.input :discount_2, label: 'Desconto 2' %>
-  <%= f.input :discount_3, label: 'Desconto 3' %>
-  <%= f.input :discount_4, label: 'Desconto 4' %>
-  <%= f.submit "Salvar", class: 'btn btn-success btn-block' %>
-<% end %>
+<%= link_to 'Adicionar Fornecedor', new_manufacturer_path %>
 <% @manufacturers.each do |manufacturer| %>
   <p><%= manufacturer.name %></p>
   <p><%= number_to_percentage(manufacturer.LG, precision: 2, separator: ',') %></p>

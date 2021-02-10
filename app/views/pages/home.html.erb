@@ -1,4 +1,10 @@
 <%= link_to 'Adicionar Fornecedor', new_manufacturer_path %>
+<%= simple_form_for [PriceList.new] do |f| %>
+  <%= f.association :manufacturer, label: 'Fornecedor' %>
+  <%= f.input :SKU, label: 'Referência' %>
+  <%= f.input :gross_price, label: 'Preço Bruto' %>
+  <%= f.submit "Criar", class: 'btn btn-success btn-block' %>
+<% end %>
 <% @manufacturers.each do |manufacturer| %>
   <p><%= manufacturer.name %></p>
   <p><%= number_to_percentage(manufacturer.LG, precision: 2, separator: ',') %></p>

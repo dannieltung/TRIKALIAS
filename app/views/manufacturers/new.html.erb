@@ -8,9 +8,31 @@
   <%= f.input :discount_4, label: 'Desconto 4' %>
   <%= f.submit "Salvar", class: 'btn btn-success btn-block' %>
 <% end %>
-<% @manufacturers.each do |manufacturer| %>
-  <p><%= manufacturer.name %></p>
-  <p><%= number_to_percentage(manufacturer.LG, precision: 2, separator: ',') %></p>
-  <p><%= number_to_percentage(manufacturer.ICMS, precision: 2, separator: ',') %></p>
-  <p><%= number_to_percentage(manufacturer.discount_1, precision: 2, separator: ',') %></p>
-<% end %>
+<br>
+<br>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">Nota Fiscal</th>
+      <th scope="col">ICMS</th>
+      <th scope="col">Desconto 1</th>
+      <th scope="col">Desconto 2</th>
+      <th scope="col">Desconto 3</th>
+      <th scope="col">Desconto 4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @manufacturers.each do |manufacturer| %>
+      <tr>
+        <td><%= manufacturer.name %></td>
+        <td><%= number_to_percentage(manufacturer.LG, precision: 0, separator: ',') %></td>
+        <td><%= number_to_percentage(manufacturer.ICMS, precision: 0, separator: ',') %></td>
+        <td><%= number_to_percentage(manufacturer.discount_1, precision: 2, separator: ',') %></td>
+        <td><%= number_to_percentage(manufacturer.discount_2, precision: 2, separator: ',') %></td>
+        <td><%= number_to_percentage(manufacturer.discount_3, precision: 2, separator: ',') %></td>
+        <td><%= number_to_percentage(manufacturer.discount_4, precision: 2, separator: ',') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

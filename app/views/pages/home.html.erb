@@ -5,9 +5,3 @@
   <%= f.input :gross_price, label: 'Preço Bruto' %>
   <%= f.submit "Criar", class: 'btn btn-success btn-block' %>
 <% end %>
-<% @manufacturers.each do |manufacturer| %>
-  <p><%= manufacturer.name %></p>
-  <p><%= number_to_percentage(manufacturer.LG, precision: 2, separator: ',') %></p>
-  <p><%= number_to_percentage(manufacturer.ICMS, precision: 2, separator: ',') %></p>
-  <p><%= number_to_percentage(manufacturer.discount_1, precision: 2, separator: ',') %></p>
-<% end %>

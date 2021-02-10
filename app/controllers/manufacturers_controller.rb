@@ -1,6 +1,7 @@
 class ManufacturersController < ApplicationController
   def new
     @manufacturer = Manufacturer.new
+    @manufacturers = Manufacturer.all
   end
 
   def create
@@ -8,7 +9,7 @@ class ManufacturersController < ApplicationController
     if @manufacturer.save
       redirect_to root_path, notice: 'Fornecedor Adicionado!'
     else
-      render 'pages/home'
+      render :new
     end
   end
 

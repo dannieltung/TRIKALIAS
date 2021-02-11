@@ -1,4 +1,6 @@
 <%= link_to 'Listar / Adicionar Fornecedor', new_manufacturer_path %>
+<br>
+<br>
 <%= simple_form_for [PriceList.new] do |f| %>
   <%= f.association :manufacturer, label: 'Fornecedor' %>
   <%= f.input :SKU, label: 'Referência' %>

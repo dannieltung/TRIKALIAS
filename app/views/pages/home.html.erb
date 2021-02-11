@@ -3,7 +3,7 @@
 <br>
 <%= simple_form_for [PriceList.new] do |f| %>
   <%= f.association :manufacturer, label: 'Fornecedor' %>
-  <%= f.input :SKU, label: 'Referência' %>
-  <%= f.input :gross_price, label: 'Preço Bruto' %>
+  <%= f.input :SKU1, label: 'Referência' %>
+  <%= f.input :gross_price1, label: 'Preço Bruto' %>
   <%= f.submit "Criar", class: 'btn btn-success btn-block' %>
 <% end %>

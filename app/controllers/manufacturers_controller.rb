@@ -13,6 +13,11 @@ class ManufacturersController < ApplicationController
     end
   end
 
+  def show
+    @manufacturer = Manufacturer.find(params[:id])
+    @manufacturer_pricelists = PriceList.where(manufacturer_id: params[:id])
+  end
+
   private
 
   def manufacturer_params

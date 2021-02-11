@@ -25,7 +25,7 @@
   <tbody>
     <% @manufacturers.each do |manufacturer| %>
       <tr>
-        <td><%= manufacturer.name %></td>
+        <td><%= link_to manufacturer.name, manufacturer_path(manufacturer) %></td>
         <td><%= number_to_percentage(manufacturer.LG, precision: 0, separator: ',') %></td>
         <td><%= number_to_percentage(manufacturer.ICMS, precision: 0, separator: ',') %></td>
         <td><%= number_to_percentage(manufacturer.discount_1, precision: 2, separator: ',') %></td>

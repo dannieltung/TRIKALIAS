@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_11_173710) do
+ActiveRecord::Schema.define(version: 2021_02_11_215154) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,33 @@ ActiveRecord::Schema.define(version: 2021_02_11_173710) do
     t.float "gross_price1"
     t.bigint "manufacturer_id"
     t.float "net_price1"
+    t.string "SKU2"
+    t.float "gross_price2"
+    t.float "net_price2"
+    t.string "SKU3"
+    t.float "gross_price3"
+    t.float "net_price3"
+    t.string "SKU4"
+    t.float "gross_price4"
+    t.float "net_price4"
+    t.string "SKU5"
+    t.float "gross_price5"
+    t.float "net_price5"
+    t.string "SKU6"
+    t.float "gross_price6"
+    t.float "net_price6"
+    t.string "SKU7"
+    t.float "gross_price7"
+    t.float "net_price7"
+    t.string "SKU8"
+    t.float "gross_price8"
+    t.float "net_price8"
+    t.string "SKU9"
+    t.float "gross_price9"
+    t.float "net_price9"
+    t.string "SKU10"
+    t.float "gross_price10"
+    t.float "net_price10"
     t.index ["manufacturer_id"], name: "index_price_lists_on_manufacturer_id"
   end
 

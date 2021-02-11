@@ -7,7 +7,7 @@ class ManufacturersController < ApplicationController
   def create
     @manufacturer = Manufacturer.new(manufacturer_params)
     if @manufacturer.save
-      redirect_to root_path, notice: 'Fornecedor Adicionado!'
+      redirect_to manufacturer_path(@manufacturer), notice: 'Fornecedor Adicionado!'
     else
       render :new
     end
@@ -15,7 +15,6 @@ class ManufacturersController < ApplicationController
 
   def show
     @manufacturer = Manufacturer.find(params[:id])
-    @manufacturer_pricelists = PriceList.where(manufacturer_id: params[:id])
   end
 
   private

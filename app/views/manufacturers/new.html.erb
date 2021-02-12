@@ -1,9 +1,15 @@
 <br>
 <%= simple_form_for @manufacturer do |f| %>
-  <%= f.input :name, label: false, placeholder: 'Nome' %>
-  <%= f.input :LG, label: false, placeholder: 'Nota Fiscal' %>
-  <%= f.input :ICMS, label: false, placeholder: 'ICMS' %>
-  <div class="row">
+  <div class="form-row">
+    <div class="col">
+      <%= f.input :name, label: false, placeholder: 'Nome' %>
+    </div>
+    <div class="col">
+      <%= f.input :LG, label: false, placeholder: '%' %>
+    </div>
+    <div class="col">
+      <%= f.input :ICMS, label: false, placeholder: 'ICMS' %>
+    </div>
     <div class="col">
       <%= f.input :discount_1, label: false, placeholder: 'Desconto 1' %>
     </div>
@@ -17,15 +23,14 @@
       <%= f.input :discount_4, label: false, placeholder: 'Desconto 4' %>
     </div>
   </div>
-  <%= f.submit "Salvar", class: 'btn btn-success btn-block' %>
+  <%= f.submit "Salvar", class: 'btn btn-primary btn-block' %>
 <% end %>
-<br>
 <br>
 <table class="table table-striped">
   <thead>
     <tr>
       <th scope="col">Nome</th>
-      <th scope="col">Nota Fiscal</th>
+      <th scope="col">%</th>
       <th scope="col">ICMS</th>
       <th scope="col">Desconto 1</th>
       <th scope="col">Desconto 2</th>

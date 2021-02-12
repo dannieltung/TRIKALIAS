@@ -1,11 +1,22 @@
+<br>
 <%= simple_form_for @manufacturer do |f| %>
-  <%= f.input :name, label: 'Nome' %>
-  <%= f.input :LG, label: 'Nota Fiscal' %>
-  <%= f.input :ICMS, label: 'ICMS' %>
-  <%= f.input :discount_1, label: 'Desconto 1' %>
-  <%= f.input :discount_2, label: 'Desconto 2' %>
-  <%= f.input :discount_3, label: 'Desconto 3' %>
-  <%= f.input :discount_4, label: 'Desconto 4' %>
+  <%= f.input :name, label: false, placeholder: 'Nome' %>
+  <%= f.input :LG, label: false, placeholder: 'Nota Fiscal' %>
+  <%= f.input :ICMS, label: false, placeholder: 'ICMS' %>
+  <div class="row">
+    <div class="col">
+      <%= f.input :discount_1, label: false, placeholder: 'Desconto 1' %>
+    </div>
+    <div class="col">
+      <%= f.input :discount_2, label: false, placeholder: 'Desconto 2' %>
+    </div>
+    <div class="col">
+      <%= f.input :discount_3, label: false, placeholder: 'Desconto 3' %>
+    </div>
+    <div class="col">
+      <%= f.input :discount_4, label: false, placeholder: 'Desconto 4' %>
+    </div>
+  </div>
   <%= f.submit "Salvar", class: 'btn btn-success btn-block' %>
 <% end %>
 <br>

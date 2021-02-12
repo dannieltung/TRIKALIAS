@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_11_232227) do
+ActiveRecord::Schema.define(version: 2021_02_12_193221) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,9 +31,7 @@ ActiveRecord::Schema.define(version: 2021_02_11_232227) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "manufacturer_id"
-    t.bigint "sku_id"
     t.index ["manufacturer_id"], name: "index_price_lists_on_manufacturer_id"
-    t.index ["sku_id"], name: "index_price_lists_on_sku_id"
   end
 
   create_table "skus", force: :cascade do |t|
@@ -42,6 +40,9 @@ ActiveRecord::Schema.define(version: 2021_02_11_232227) do
     t.float "gross_price"
     t.float "net_price"
     t.float "sale_price"
+    t.string "gtin"
+    t.bigint "price_list_id"
+    t.index ["price_list_id"], name: "index_skus_on_price_list_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -57,5 +58,5 @@ ActiveRecord::Schema.define(version: 2021_02_11_232227) do
   end
 
   add_foreign_key "price_lists", "manufacturers"
-  add_foreign_key "price_lists", "skus"
+  add_foreign_key "skus", "price_lists"
 end

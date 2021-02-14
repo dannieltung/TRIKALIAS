@@ -1,10 +1,5 @@
 class PriceListsController < ApplicationController
 
-  def new
-    @price_list = PriceList.new
-    @price_list.skus.build
-  end
-
   def create
     @price_list = PriceList.new(price_list_params)
     if @price_list.save

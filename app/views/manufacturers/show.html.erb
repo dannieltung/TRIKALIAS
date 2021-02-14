@@ -1,6 +1,20 @@
 <%= @manufacturer.name %>
-<% @skus.each do |sku| %>
-  <p><%= sku.gtin %></p>
-  <p><%= sku.gross_price %></p>
-  <p><%= sku.net_price %></p>
-<% end %>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Referência</th>
+      <th scope="col">Preço Bruto</th>
+      <th scope="col">Preço Líquido</th>
+      <th scope="col">Preço de Venda</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @skus.each do |sku| %>
+      <tr>
+        <td><%= sku.gtin %></td>
+        <td><%= number_to_currency(sku.gross_price, precision: 2, separator: ',') %></td>
+        <td><%= number_to_currency(sku.net_price, precision: 2, separator: ',') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

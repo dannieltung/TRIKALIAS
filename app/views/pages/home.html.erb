@@ -24,16 +24,6 @@
         </div>
       </div>
     <% end %>
-    <%= f.simple_fields_for :skus do |g| %>
-      <div class="row">
-        <div class="col">
-          <%= g.input :gtin, label: 'Referência' %>
-        </div>
-        <div class="col">
-          <%= g.input :gross_price, label: 'Preço Bruto' %>
-        </div>
-      </div>
-    <% end %>
     <br>
     <%= f.submit "Criar", class: 'btn btn-primary btn-block' %>
   <% end %>

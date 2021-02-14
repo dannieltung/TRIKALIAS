@@ -11,26 +11,6 @@
         </div>
       </div>
     <% end %>
-    <%= f.simple_fields_for :skus do |g| %>
-      <div class="row">
-        <div class="col">
-          <%= g.input :gtin, label: 'Referência' %>
-        </div>
-        <div class="col">
-          <%= g.input :gross_price, label: 'Preço Bruto' %>
-        </div>
-      </div>
-    <% end %>
-    <%= f.simple_fields_for :skus do |g| %>
-      <div class="row">
-        <div class="col">
-          <%= g.input :gtin, label: 'Referência' %>
-        </div>
-        <div class="col">
-          <%= g.input :gross_price, label: 'Preço Bruto' %>
-        </div>
-      </div>
-    <% end %>
     <%= f.submit "Criar", class: 'btn btn-success btn-block' %>
   <% end %>
 </div>

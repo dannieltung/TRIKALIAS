@@ -15,6 +15,8 @@ class ManufacturersController < ApplicationController
 
   def show
     @manufacturer = Manufacturer.find(params[:id])
+    price_lists = PriceList.where(manufacturer_id: @manufacturer.id)
+    @skus = Sku.where(price_list_id: price_lists.ids)
   end
 
   private

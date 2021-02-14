@@ -1,1 +1,5 @@
 <%= @manufacturer.name %>
+<% @skus.each do |sku| %>
+  <p><%= sku.gtin %></p>
+  <p><%= sku.gross_price %></p>
+<% end %>

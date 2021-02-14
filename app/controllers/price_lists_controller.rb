@@ -11,7 +11,9 @@ class PriceListsController < ApplicationController
       Sku.where(gross_price: nil).destroy_all
       # a = Sku.where(price_list_id: @price_list.id).as_json
       # raise
-      Sku.where(price_list_id: @price_list.id).update_all('net_price = gross_price * 2')
+      # @manufacturer = Manufacturer.find(@price_list.manufacturer_id)
+      # @manufacturer.name
+      Sku.where(price_list_id: @price_list.id).update_all("net_price = (gross_price * (1 - #{discount1}) * (1 - #{discount2}) * (1 - #{discount3}) * (1 - #{discount4}))")
       # raise
       # a.each { |sku| sku["net_price"] = sku["gross_price"] * 2 }
       # raise

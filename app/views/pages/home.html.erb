@@ -1,5 +1,6 @@
-<%= link_to 'Adicionar / Listar Fornecedor(es)', new_manufacturer_path %>
 <br>
+<p><%= link_to 'Adicionar / Listar Fornecedor(es)', new_manufacturer_path %></p>
+<p><%= link_to 'Adicionar / Listar Custo(s)', new_cost_path %></p>
 <br>
 <div class="container">
   <%= simple_form_for @price_list do |f| %>
@@ -12,15 +13,8 @@
         <div class="col">
           <%= g.input :gross_price, label: 'Preço Bruto' %>
         </div>
-      </div>
-    <% end %>
-    <%= f.simple_fields_for :skus do |g| %>
-      <div class="row">
         <div class="col">
-          <%= g.input :gtin, label: 'Referência' %>
-        </div>
-        <div class="col">
-          <%= g.input :gross_price, label: 'Preço Bruto' %>
+          <%= g.input :ipi, label: 'IPI' %>
         </div>
       </div>
     <% end %>
@@ -32,15 +26,8 @@
         <div class="col">
           <%= g.input :gross_price, label: 'Preço Bruto' %>
         </div>
-      </div>
-    <% end %>
-    <%= f.simple_fields_for :skus do |g| %>
-      <div class="row">
         <div class="col">
-          <%= g.input :gtin, label: 'Referência' %>
-        </div>
-        <div class="col">
-          <%= g.input :gross_price, label: 'Preço Bruto' %>
+          <%= g.input :ipi, label: 'IPI' %>
         </div>
       </div>
     <% end %>
@@ -51,6 +38,35 @@
         </div>
         <div class="col">
           <%= g.input :gross_price, label: 'Preço Bruto' %>
+        </div>
+        <div class="col">
+          <%= g.input :ipi, label: 'IPI' %>
+        </div>
+      </div>
+    <% end %>
+    <%= f.simple_fields_for :skus do |g| %>
+      <div class="row">
+        <div class="col">
+          <%= g.input :gtin, label: 'Referência' %>
+        </div>
+        <div class="col">
+          <%= g.input :gross_price, label: 'Preço Bruto' %>
+        </div>
+        <div class="col">
+          <%= g.input :ipi, label: 'IPI' %>
+        </div>
+      </div>
+    <% end %>
+    <%= f.simple_fields_for :skus do |g| %>
+      <div class="row">
+        <div class="col">
+          <%= g.input :gtin, label: 'Referência' %>
+        </div>
+        <div class="col">
+          <%= g.input :gross_price, label: 'Preço Bruto' %>
+        </div>
+        <div class="col">
+          <%= g.input :ipi, label: 'IPI' %>
         </div>
       </div>
     <% end %>

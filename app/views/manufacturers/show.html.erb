@@ -1,7 +1,11 @@
+<br>
 <%= @manufacturer.name %>
+<br>
+<br>
 <table class="table table-striped">
   <thead>
     <tr>
+      <th scope="col">Calculado</th>
       <th scope="col">Referência</th>
       <th scope="col">Preço Bruto</th>
       <th scope="col">Preço Líquido</th>
@@ -11,6 +15,7 @@
   <tbody>
     <% @skus.each do |sku| %>
       <tr>
+        <td><%= sku.created_at.strftime('%d/%m/%y') %></td>
         <td><%= sku.gtin %></td>
         <td><%= number_to_currency(sku.gross_price, precision: 2, separator: ',') %></td>
         <td><%= number_to_currency(sku.net_price, precision: 2, separator: ',') %></td>

@@ -1,0 +1,5 @@
+<p><%= @cost.updated_at.strftime('%d/%m/%y') %></p>
+<p><%= "Simples Nacional: #{number_to_percentage(@cost.simples, precision: 2, separator: ',')}" %></p>
+<p><%= "Débito: #{number_to_percentage(@cost.débito, precision: 2, separator: ',')}" %></p>
+<p><%= "Crédito: #{number_to_percentage(@cost.crédito, precision: 2, separator: ',')}" %></p>
+<p><%= "Crédito: #{number_to_percentage(@cost.parcelado, precision: 2, separator: ',')}" %></p>

@@ -10,16 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_12_193221) do
+ActiveRecord::Schema.define(version: 2021_02_15_023016) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "costs", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.float "simples"
+    t.float "débito"
+    t.float "crédito"
+    t.float "parcelado"
+  end
 
   create_table "manufacturers", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
-    t.integer "LG"
+    t.float "LG"
     t.integer "ICMS"
     t.float "discount_1"
     t.float "discount_2"
@@ -42,6 +51,7 @@ ActiveRecord::Schema.define(version: 2021_02_12_193221) do
     t.float "sale_price"
     t.string "gtin"
     t.bigint "price_list_id"
+    t.float "ipi"
     t.index ["price_list_id"], name: "index_skus_on_price_list_id"
   end
 

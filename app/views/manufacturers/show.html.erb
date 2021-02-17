@@ -19,6 +19,7 @@
         <td><%= sku.gtin %></td>
         <td><%= number_to_currency(sku.gross_price, precision: 2, separator: ',') %></td>
         <td><%= number_to_currency(sku.net_price, precision: 2, separator: ',') %></td>
+        <td><%= number_to_currency(sku.sale_price, precision: 2, separator: ',') %></td>
       </tr>
     <% end %>
   </tbody>

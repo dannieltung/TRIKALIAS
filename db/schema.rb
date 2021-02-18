@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_16_234926) do
+ActiveRecord::Schema.define(version: 2021_02_18_023710) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2021_02_16_234926) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
     t.float "LG"
-    t.integer "ICMS"
+    t.float "ICMS"
     t.float "discount_1"
     t.float "discount_2"
     t.float "discount_3"
@@ -52,6 +52,8 @@ ActiveRecord::Schema.define(version: 2021_02_16_234926) do
     t.string "gtin"
     t.bigint "price_list_id"
     t.float "ipi"
+    t.float "minimum_sale_price"
+    t.float "manufacturer_net_price"
     t.index ["price_list_id"], name: "index_skus_on_price_list_id"
   end
 

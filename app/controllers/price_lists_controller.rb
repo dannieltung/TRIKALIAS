@@ -17,6 +17,10 @@ class PriceListsController < ApplicationController
 
   private
 
+  def icms
+    (18 - Manufacturer.find(params[:price_list][:manufacturer_id]).ICMS) / 100
+  end
+
   def package
     Cost.find(1).package
   end
@@ -35,10 +39,6 @@ class PriceListsController < ApplicationController
 
   def price_list_params
     params.require(:price_list).permit(:manufacturer_id, skus_attributes: [:gtin, :gross_price, :ipi, :manufacturer_net_price, :net_price, :sale_price, :minimum_sale_price])
-  end
-
-  def icms
-    (18 - Manufacturer.find(params[:price_list][:manufacturer_id]).ICMS) / 100
   end
 
   def lg

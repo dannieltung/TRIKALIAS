@@ -1,10 +1,9 @@
 <br>
 <p><%= link_to 'Adicionar / Listar Fornecedor(es)', new_manufacturer_path %></p>
-<p><%= link_to 'Adicionar / Listar Custo(s)', new_cost_path %></p>
 <br>
 <div class="container">
   <%= simple_form_for @price_list do |f| %>
-    <%= f.association :manufacturer, label: 'Fornecedor' %>
+    <%= f.association :manufacturer, collection: Manufacturer.order('name ASC'), label: 'Fornecedor' %>
     <%= f.simple_fields_for :skus do |g| %>
       <div class="row">
         <div class="col">

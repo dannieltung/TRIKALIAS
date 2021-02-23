@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_18_023710) do
+ActiveRecord::Schema.define(version: 2021_02_23_002346) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 2021_02_18_023710) do
     t.float "debito"
     t.float "credito"
     t.float "parcelado"
+    t.float "spread"
+    t.float "package"
   end
 
   create_table "manufacturers", force: :cascade do |t|

@@ -1,5 +1,30 @@
 <br>
-<%= @manufacturer.name %>
+<%= simple_form_for @manufacturer do |f| %>
+  <div class="form-row">
+    <div class="col">
+      <%= f.input :name, label: 'Nome' %>
+    </div>
+    <div class="col">
+      <%= f.input :LG, label: 'Nota Fiscal' %>
+    </div>
+    <div class="col">
+      <%= f.input :ICMS, label: 'ICMS' %>
+    </div>
+    <div class="col">
+      <%= f.input :discount_1, label: 'Desconto 1' %>
+    </div>
+    <div class="col">
+      <%= f.input :discount_2, label: 'Desconto 2' %>
+    </div>
+    <div class="col">
+      <%= f.input :discount_3, label: 'Desconto 3' %>
+    </div>
+    <div class="col">
+      <%= f.input :discount_4, label: 'Desconto 4' %>
+    </div>
+  </div>
+  <%= f.submit "Atualizar", class: 'btn btn-success btn-block' %>
+<% end %>
 <br>
 <br>
 <table class="table table-striped">

@@ -19,6 +19,16 @@ class ManufacturersController < ApplicationController
     @skus = Sku.where(price_list_id: price_lists.ids).sort_by { |event| [event.created_at, event.gtin] } # observar o uso de ids no plural para comparacao
   end
 
+  def update
+    @manufacturer = Manufacturer.find(params[:id])
+    price_lists = PriceList.where(manufacturer_id: @manufacturer.id)
+    if @manufacturer.update(manufacturer_params)
+      redirect_to new_manufacturer_path, notice: 'Fornecedor Atualizado'
+    else
+      render :show
+    end
+  end
+
   private
 
   def manufacturer_params
